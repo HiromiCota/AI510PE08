@@ -9,22 +9,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - name: Checkout Code
-       uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-     - name: Set up Python
-       uses: actions/setup-python@v5
-       with:
-         python-version: '3.x'
-     
-     - name: Install dependencies
-       run: pip install -r requirements.txt
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-     - name: Train Model (Simulate Vertex AI)
-       run: python train_gcp.py
+      - name: Train Model (Simulate Vertex AI)
+        run: python train_gcp.py
 
-     - name: Deploy model (Simulate GCP Endpoint)
-       run: python deploy_gcp_model.py
+      - name: Deploy model (Simulate GCP Endpoint)
+        run: python deploy_gcp_model.py
 
-     - name: Monitor Model (Simulate Cloud Monitoring)
-       run: python monitor_gcp.py
+      - name: Monitor Model (Simulate Cloud Monitoring)
+        run: python monitor_gcp.py
